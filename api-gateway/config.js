@@ -21,5 +21,5 @@ console.log(header.display("Janet", "Blohn", "Assignment 2.3, Configuration Prog
 var config = {};
 config.web = {};
 config.web.port = process.env.PORT || '3000';
-config.web.secret = 'topsecret'
+config.web.secret = 'topsecret';
 module.exports = config;

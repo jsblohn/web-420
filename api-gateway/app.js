@@ -5,7 +5,7 @@
 ; Date:   03 May 2020
 ; Modified By: Janet Blohn
 ; Last Modified Date: 07 May 2020
-; Description: Node program RESTful APIs Class
+; Description: Main program for RESTful APIs Class
 ============================================
 */
 
@@ -26,7 +26,6 @@ var apiCatalog = require('./routes/api-catalog');
 mongoose.Promise = require('bluebird');
 
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -50,7 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api", apiCatalog);
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
