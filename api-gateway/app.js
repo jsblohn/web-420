@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   03 May 2020
 ; Modified By: Janet Blohn
-; Last Modified Date: N/A
+; Last Modified Date: 07 May 2020
 ; Description: Node program RESTful APIs Class
 ============================================
 */
@@ -13,7 +13,7 @@
 const header = require("../blohn-header");
 
 // Print the Header
-console.log(header.display("Janet", "Blohn", "Assignment 1.4"));
+console.log(header.display("Janet", "Blohn", "Assignment 2.3, App Program"));
 
 // Create the variables
 var createError = require('http-errors');
@@ -22,6 +22,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var apiCatalog = require('./routes/api-catalog');
 mongoose.Promise = require('bluebird');
 
 var indexRouter = require('./routes/index');
@@ -30,7 +31,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // MongoDB Connection
-mongoose.connect('mongodb://admin/admin@buwebdev-cluster-1-akhri.mongodb.net/api-gateway', {
+mongoose.connect('mongodb+srv://admin:admin@buwebdev-cluster-1-akhri.mongodb.net/api-gateway', {
   promiseLibrary: require('bluebird'),
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -46,6 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/api", apiCatalog);
 
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
