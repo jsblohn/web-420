@@ -13,7 +13,7 @@
 const header = require("../blohn-header");
 
 // Print the Header
-console.log(header.display("Janet", "Blohn", "Assignment 2.3, App Program"));
+console.log(header.display("Janet", "Blohn", "App Program"));
 
 // Create the variables
 var createError = require('http-errors');

@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 var config = require('../config');
+
+/*
+============================================
+; Title:  www
+; Author: Professor Krasso
+; Date:   03 May 2020
+; Modified By: Janet Blohn
+; Last Modified Date: 03 May 2020
+; Description: BIN file for API-Gateway Project
+============================================
+*/
+
 /**
  * Module dependencies.
  */

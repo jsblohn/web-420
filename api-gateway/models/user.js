@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   07 May 2020
 ; Modified By: Janet Blohn
-; Last Modified Date: N/A
+; Last Modified Date: 21 May 2020
 ; Description: User program for API-Gateway Project
 ============================================
 */
@@ -13,7 +13,7 @@
 const header = require("../../blohn-header");
 
 // Print the Header
-console.log(header.display("Janet", "Blohn", "Assignment 2.3, User Program"));
+console.log(header.display("Janet", "Blohn", "User Program"));
 
 // Create the variables
 var mongoose = require("mongoose");
@@ -26,6 +26,17 @@ var userSchema = new mongoose.Schema ({
 });
 
 module.exports = mongoose.model("User", userSchema);
+
+// Add a new user to the database. user.save will add it to the database.
+module.exports.add = (user, callback) => {
+  user.save(callback);
+};
+
+// Query to find user by id
+module.exports.getById = (id, callback) => {
+  var query = {_id: id};
+  User.findById(query, callback);
+};
 
 /**
 * Database queries

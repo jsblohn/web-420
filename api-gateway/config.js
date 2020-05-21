@@ -14,7 +14,7 @@
 const header = require('../blohn-header');
 
 // Print the Header
-console.log(header.display("Janet", "Blohn", "Assignment 2.3, Configuration Program"));
+console.log(header.display("Janet", "Blohn", "Configuration Program"));
 
 // Create the initial configuration requirements
 
