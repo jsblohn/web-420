@@ -25,7 +25,7 @@ var userSchema = new mongoose.Schema ({
   email: String
 });
 
-module.exports = mongoose.model("User", userSchema);
+const User = module.exports = mongoose.model("User", userSchema);
 
 // Add a new user to the database. user.save will add it to the database.
 module.exports.add = (user, callback) => {
