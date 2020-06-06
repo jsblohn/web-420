@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   07 May 2020
 ; Modified By: Janet Blohn
-; Last Modified Date: 21 May 2020
+; Last Modified Date: 05 June 2020
 ; Description: User program for API-Gateway Project
 ============================================
 */
@@ -32,12 +32,19 @@ module.exports.add = (user, callback) => {
   user.save(callback);
 };
 
+/**
+* Database queries
+ */
+
 // Query to find user by id
 module.exports.getById = (id, callback) => {
   var query = {_id: id};
   User.findById(query, callback);
 };
 
-/**
-* Database queries
- */
+//Query to find user by email address
+module.exports.getOne = (e, callback) => {
+  var query = {email: e};
+  User.findOne(query, callback);
+};
+

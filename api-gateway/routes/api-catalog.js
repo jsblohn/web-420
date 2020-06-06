@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   07 May 2020
 ; Modified By: Janet Blohn
-; Last Modified Date: N/A
+; Last Modified Date: 05 June 2020
 ; Description: API-Catalog program for API-Gateway Project
 ============================================
 */
@@ -29,3 +29,9 @@ router.post("/auth/register", auth_controller.user_register);
 router.get("/auth/token", auth_controller.user_token);
 
 module.exports = router;
+
+// Allow user login requests
+router.post("/auth/login", auth_controller.user_login);
+
+// Allow user logout requests
+router.get("/auth/logout", auth_controller.user_logout);
